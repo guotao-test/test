@@ -1,0 +1,8 @@
+创建log4j对应的日志表
+create table log(
+    `id` int auto_increment primary key not null ,
+    `time` datetime not null comment '日志时间',
+    `priority` varchar(5) not null comment '优先级',
+    `exeTime` int not null comment '执行时间',
+    `message` varchar(255) not null comment '代码指定信息'
+);
