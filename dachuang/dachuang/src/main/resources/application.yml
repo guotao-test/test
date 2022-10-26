@@ -1,7 +1,0 @@
-#此处配置一些公共的环境
-spring:
-  profiles:
-    active: '@spring.profiles.active@'
-  application:
-    name: 大创
-
