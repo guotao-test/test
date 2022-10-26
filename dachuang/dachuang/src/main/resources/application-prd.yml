@@ -1,7 +1,0 @@
-server:
-  port: 8002
-#生产环境中热部署关闭
-spring:
-  devtools:
-    restart:
-      enabled: false
