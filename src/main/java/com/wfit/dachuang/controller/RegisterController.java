@@ -31,10 +31,10 @@ public class RegisterController {
         userDetail.getUser().setId(user_id);
         ObjectNode node= CreateObjectNodeUtil.getObjectNode();
         if (service.register(userDetail)==2){
-            logger.info("注册成功"+userDetail);
+            logger.info("注册成功,用户id:"+userDetail.getUser().getId());
             return node.put("code","200").toString();
         }
-        logger.error("注册失败");
+        logger.error("注册失败!!");
         return node.put("code","500").toString();
     }
 }

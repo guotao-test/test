@@ -16,4 +16,15 @@ create table `user_detail`(
     `update_time` datetime not null comment '修改时间',
     `remarks` varchar(255) comment '备注',
     `del_flag` varchar(1) default '0' comment '未删除：0 已删除：1'
+);
+#字典种类
+create table dict(
+    `id` varchar(32) primary key not null comment '字典种类id',
+    `name` varchar(32) not null comment '字典种类'
+);
+#字典种类对应的详细类别
+create table dict_detail(
+    `id` varchar(32) primary key not null comment '字典详情id',
+    `dict_id` varchar(32) not null comment '对应种类id',
+    `name` varchar(32) not null comment '字典详情名字'
 )
