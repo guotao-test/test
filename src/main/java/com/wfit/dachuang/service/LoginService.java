@@ -2,6 +2,6 @@ package com.wfit.dachuang.service;
 
 import com.wfit.dachuang.pojo.User;
 
-public interface TestService {
-    int checkUser(User user);
+public interface LoginService {
+    int login(User user);
 }

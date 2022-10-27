@@ -1,0 +1,19 @@
+#用户账号密码表
+create table `user`(
+    `id` varchar(32) primary key not null comment '用户id->uuid',
+    `account` varchar(11) not null unique comment '账号',
+    `password` varchar(32) not null comment '密码'
+);
+#用户详细信息表
+create table `user_detail`(
+    `id` varchar(32) primary key not null comment '详细信息id',
+    `user_id` varchar(32) not null comment '用户id',
+    `email` varchar(32) not null comment '邮箱',
+    `phone` varchar(11) comment '电话',
+    `create_by` varchar(32) comment '创建者',
+    `create_time` datetime not null comment '创建时间',
+    `update_by` varchar(32) comment '修改者',
+    `update_time` datetime not null comment '修改时间',
+    `remarks` varchar(255) comment '备注',
+    `del_flag` varchar(1) default '0' comment '未删除：0 已删除：1'
+)
