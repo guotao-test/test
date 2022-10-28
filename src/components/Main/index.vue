@@ -2,7 +2,7 @@
     <div>    
         <el-row class="header">
             <el-col :span="24">
-                <h1>毕业设计选题系统</h1>
+                <h1>xxxxx</h1>
             </el-col>
         </el-row>
         <el-row class="main">
