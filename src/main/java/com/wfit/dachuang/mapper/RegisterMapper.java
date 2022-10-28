@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface RegisterMapper {
     int registerDetail(UserDetail userDetail);
     int registerUser(User user);
+    int checkAccount(String account);
 }

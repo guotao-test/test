@@ -8,10 +8,7 @@ import com.wfit.dachuang.service.RegisterService;
 import com.wfit.dachuang.utils.CreateObjectNodeUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -36,5 +33,15 @@ public class RegisterController {
         }
         logger.error("注册失败!!");
         return node.put("code","500").toString();
+    }
+    @RequestMapping("/checkAccount")
+    public String checkAccount(@RequestParam("account") String account){
+        int i = service.checkAccount(account);
+        ObjectNode objectNode = CreateObjectNodeUtil.getObjectNode();
+        if(i==0){
+            logger.error(account+"用户名不存在");
+            return objectNode.put("code","200").toString();
+        }
+        return objectNode.put("code","500").put("msg","用户名存在").toString();
     }
 }

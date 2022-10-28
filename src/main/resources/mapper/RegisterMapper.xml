@@ -6,6 +6,9 @@
         insert into user values (#{id},#{account},#{password});
     </insert>
     <insert id="registerDetail" parameterType="com.wfit.dachuang.pojo.UserDetail">
-        insert into user_detail(id, user_id, email, phone, create_by, create_time, update_by, update_time,remarks) values (#{id},#{user.id},#{email},#{phone},#{createBy},now(),#{updateBy},now(),#{remarks});
+        insert into user_detail(id, user_id, email, phone, create_by, create_time, update_by, update_time,remarks,sex) values (#{id},#{user.id},#{email},#{phone},ifnull(#{createBy},'system'),now(),ifnull(#{updateBy},'system'),now(),#{remarks},#{sex});
     </insert>
+    <select id="checkAccount" parameterType="string" resultType="int">
+        select count(*) from user where account=#{account}
+    </select>
 </mapper>

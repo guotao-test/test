@@ -20,5 +20,5 @@ public class UserDetail {
     private Date updateTime;
     private String remarks;
     private String delFlag;
-
+    private String sex;
 }

@@ -26,9 +26,9 @@ public class LoginController {
         ObjectNode objectNode = CreateObjectNodeUtil.getObjectNode();
         if (login==0){
             logger.error(user.getAccount()+"查询失败");
-            return objectNode.put("node","500").toString();
+            return objectNode.put("code","500").toString();
         }
         logger.info(user.getAccount()+"查询成功");
-        return objectNode.put("node","200").toString();
+        return objectNode.put("code","200").toString();
     }
 }

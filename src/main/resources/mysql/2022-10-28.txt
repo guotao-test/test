@@ -1,0 +1,5 @@
+#修改创建人和修改人的默认值为system
+alter table user_detail modify `create_by` varchar(32) default 'system' comment '创建人';
+alter table user_detail modify `update_by` varchar(32) default 'system' comment '修改人';
+#添加性别字段 0-》女 1-》男
+alter table user_detail add `sex` varchar(1) not null comment '0：女 1：男';

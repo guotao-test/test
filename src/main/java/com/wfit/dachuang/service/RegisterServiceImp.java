@@ -17,4 +17,9 @@ public class RegisterServiceImp implements RegisterService{
     public int register(UserDetail userDetail) {
         return mapper.registerUser(userDetail.getUser())+mapper.registerDetail(userDetail);
     }
+
+    @Override
+    public int checkAccount(String account) {
+        return mapper.checkAccount(account);
+    }
 }
