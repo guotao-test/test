@@ -1,0 +1,12 @@
+#菜单表，用来链接每个权限的用户所拥有哪些功能
+CREATE TABLE `menu`(
+	`id` VARCHAR(32) PRIMARY KEY NOT NULL COMMENT '菜单id',
+	`role_id` VARCHAR(32) NOT NULL COMMENT '权限id->在dict字典里',
+	`href` VARCHAR(255) NOT NULL COMMENT '地址',
+	`create_by` varchar(32) DEFAULT 'system' COMMENT '创建人',
+    `create_time` datetime NOT NULL COMMENT '创建时间',
+    `update_by` varchar(32) DEFAULT 'system' COMMENT '修改人',
+    `update_time` datetime NOT NULL COMMENT '修改时间',
+    `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+    `del_flag` varchar(1) DEFAULT '0' COMMENT '未删除：0 已删除：1'
+)
