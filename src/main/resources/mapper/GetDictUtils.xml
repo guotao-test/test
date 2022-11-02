@@ -1,0 +1,62 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wfit.dachuang.utils.GetDictUtils">
+    <select id="getDictByRole" resultType="com.wfit.dachuang.pojo.DictDetail">
+        SELECT
+            d1.id AS id,
+            d1.dict_id AS dictId,
+            d1.`name` AS `name`
+        FROM
+            dict d
+            LEFT JOIN dict_detail d1 ON d.id = d1.dict_id
+        WHERE
+            d.`name` = '权限'
+    </select>
+    <select id="getDictByHospLevel" resultType="com.wfit.dachuang.pojo.DictDetail">
+        SELECT
+            d2.id AS id,
+            d2.dict_id AS dictId,
+            d2.`name` AS `name`
+        FROM
+            dict d
+            LEFT JOIN dict_detail d1 ON d.id = d1.dict_id
+            LEFT JOIN dict_detail d2 ON d1.id = d2.dict_id
+        WHERE
+            d.`name` = '医院等级';
+    </select>
+    <select id="getDictByDepartment" resultType="com.wfit.dachuang.pojo.DictDetail">
+        SELECT
+            d2.id AS id,
+            d2.dict_id AS dictId,
+            d2.`name` AS `name`
+        FROM
+            dict d
+            LEFT JOIN dict_detail d1 ON d.id = d1.dict_id
+            LEFT JOIN dict_detail d2 ON d1.id = d2.dict_id
+        WHERE
+            d.`name` = '医科';
+    </select>
+    <select id="getDictByTitle" resultType="com.wfit.dachuang.pojo.DictDetail">
+        SELECT
+            d2.id AS id,
+            d2.dict_id AS dictId,
+            d2.`name` AS `name`
+        FROM
+            dict d
+            LEFT JOIN dict_detail d1 ON d.id = d1.dict_id
+            LEFT JOIN dict_detail d2 ON d1.id = d2.dict_id
+        WHERE
+            d.`name` = '职称';
+    </select>
+    <select id="getDictByDictId" parameterType="string" resultType="com.wfit.dachuang.pojo.DictDetail">
+        SELECT
+            d.id AS id,
+            d.dict_id AS dictId,
+            d.`name` AS `name`
+        FROM
+            dict_detail d
+        where d.dict_id=#{dictId}
+    </select>
+
+</mapper>
