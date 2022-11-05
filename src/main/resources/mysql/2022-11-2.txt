@@ -9,4 +9,4 @@ CREATE TABLE `menu`(
     `update_time` datetime NOT NULL COMMENT '修改时间',
     `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
     `del_flag` varchar(1) DEFAULT '0' COMMENT '未删除：0 已删除：1'
-)test
+)test11
